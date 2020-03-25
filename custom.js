@@ -19,7 +19,7 @@ document.getElementById("withdraw").addEventListener("click", () => {
   let withdrawNumber = getAmount("WithdrawAmount");
   updateField("currentwithdraw", withdrawNumber);
   document.getElementById("WithdrawAmount").value = "";
-  updateField2("balance",withdrawNumber);
+  updateField("balance", -1* withdrawNumber);
 });
 
 
@@ -35,12 +35,4 @@ function updateField(id, lastNumber) {
   let balanceFloat = parseFloat(balance);
   let newBalance = balanceFloat + lastNumber;
   document.getElementById(id).innerText = newBalance;
-}
-
-//withdraw subtracting
-function updateField2(id, lastNumber) {
-    let balance = document.getElementById(id).innerText;
-    let balanceFloat = parseFloat(balance);
-    let newBalance = balanceFloat - lastNumber;
-    document.getElementById(id).innerText = newBalance;
 }
